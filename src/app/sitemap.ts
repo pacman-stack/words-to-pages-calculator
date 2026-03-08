@@ -1,6 +1,13 @@
 import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/slug-config";
 
+export const dynamic = "force-static";
+
+// Blog posts that have published pages — add to this list as new posts are written
+const blogPosts = [
+  "how-many-pages-is-1000-words",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://wordtopages.com";
 
@@ -11,6 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const blogPages = blogPosts.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -18,7 +32,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 1.0,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
     ...slugPages,
+    ...blogPages,
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
