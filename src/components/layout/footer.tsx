@@ -48,6 +48,9 @@ export function Footer() {
         <div className="mt-8 pt-4 border-t flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
           <span>&copy; {new Date().getFullYear()} Word to Pages. All rights reserved.</span>
           <div className="flex gap-4">
+            <Link href="/blog" className="hover:text-foreground transition-colors">
+              Blog
+            </Link>
             <Link href="/privacy-policy" className="hover:text-foreground transition-colors">
               Privacy Policy
             </Link>

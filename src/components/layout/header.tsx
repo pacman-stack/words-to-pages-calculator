@@ -28,7 +28,15 @@ export function Header() {
           <span className="sm:hidden">Word to Pages</span>
         </Link>
 
-        <ThemeToggle />
+        <div className="flex items-center gap-4">
+          <Link
+            href="/blog"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Blog
+          </Link>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
