@@ -45,8 +45,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-4 border-t text-center text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} Word to Pages. All rights reserved.
+        <div className="mt-8 pt-4 border-t flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
+          <span>&copy; {new Date().getFullYear()} Word to Pages. All rights reserved.</span>
+          <div className="flex gap-4">
+            <Link href="/privacy-policy" className="hover:text-foreground transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="hover:text-foreground transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
