@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const AD_CLIENT = "ca-pub-7168203322368504";
+const AD_CLIENT = "ca-pub-1697048638773613";
 
 const formats: Record<string, { format: string; className: string }> = {
   banner: { format: "horizontal", className: "w-full min-h-[90px]" },
